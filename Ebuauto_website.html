@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ebuauto | Worldwide Car Export</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#101828;background:#fff}
+.top{background:#08111f;color:#d9e2ef;text-align:center;padding:9px;font-size:13px}
+nav{height:72px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #edf0f4;background:#fff;position:sticky;top:0;z-index:10}
+.logo{font-size:23px;font-weight:900;letter-spacing:-1px}.logo span{color:#1769e0}
+.navlinks{display:flex;gap:27px;font-size:14px;font-weight:700}.navlinks a{text-decoration:none;color:#101828}
+.btn{display:inline-block;border:0;border-radius:8px;padding:13px 19px;background:#1769e0;color:#fff;font-weight:800;text-decoration:none;cursor:pointer}
+.hero{min-height:590px;background:linear-gradient(90deg,rgba(5,13,26,.96),rgba(5,13,26,.48)),url('https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=2000&q=85') center/cover;display:flex;align-items:center;padding:70px 7%}
+.heroText{max-width:680px;color:#fff}.heroText small,.heading small,.split small,.contact small{color:#4b9aff;font-weight:900;letter-spacing:2px}
+.hero h1{font-size:64px;line-height:1.02;margin:15px 0}.hero h1 span{color:#77b1ff}.hero p{font-size:18px;line-height:1.7;color:#d4dce8;max-width:600px;margin-bottom:28px}
+.outline{display:inline-block;border:1px solid #8390a3;border-radius:8px;padding:12px 19px;color:#fff;font-weight:800;margin-left:8px;text-decoration:none}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);padding:25px 7%;gap:10px;border-bottom:1px solid #eee}.stats div{padding:12px 18px;border-right:1px solid #e5e7eb}.stats div:last-child{border:0}.stats b,.stats span{display:block}.stats span{color:#667085;font-size:13px;margin-top:4px}
+section{padding:78px 7%}.heading{text-align:center;max-width:700px;margin:auto}.heading h2,.split h2,.contact h2{font-size:40px;margin:12px 0}.heading p,.split p,.contact p{color:#667085;line-height:1.7}
+.filters{max-width:900px;margin:35px auto 20px;display:grid;grid-template-columns:2fr 1fr;gap:12px}.filters input,.filters select{padding:14px;border:1px solid #d9dee8;border-radius:8px;font-size:14px;background:#fff;width:100%}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1150px;margin:auto}.card{border:1px solid #e4e8ef;border-radius:14px;overflow:hidden;background:#fff}.card img{width:100%;height:205px;object-fit:cover}.cardBody{padding:18px}.card h3{margin:0 0 8px;font-size:20px}.meta{color:#667085;font-size:13px}.price{font-weight:900;font-size:20px;margin:15px 0}
+.light{background:#f7f9fc}.serviceGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:40px auto 0;max-width:1150px}.serviceGrid article{background:#fff;border:1px solid #e4e8ef;border-radius:14px;padding:25px}.serviceGrid article>div{font-size:28px}.serviceGrid h3{margin-bottom:8px}.serviceGrid p{color:#667085;line-height:1.6;font-size:14px}
+.split{max-width:1150px;margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}.split li{margin:13px 0;color:#475467}.quoteBox{background:#0a1322;color:#fff;padding:30px;border-radius:16px}.quoteBox h3{font-size:25px;margin-top:0}.quoteBox form{display:grid;gap:12px}.quoteBox input,.quoteBox select{padding:14px;border-radius:8px;border:1px solid #34445a;background:#121e30;color:#fff}
+.contact{background:#eaf2ff;display:flex;justify-content:space-between;align-items:center;gap:30px}.contactBtns{white-space:nowrap}
+footer{background:#070d17;color:#aeb9c9;padding:35px 7%;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+@media(max-width:800px){.navlinks{display:none}.hero{min-height:530px;padding:60px 6%}.hero h1{font-size:43px}.stats,.grid,.serviceGrid,.split{grid-template-columns:1fr}.stats div{border-right:0;border-bottom:1px solid #eee}.filters{grid-template-columns:1fr}section{padding:58px 6%}.heading h2,.split h2,.contact h2{font-size:32px}.contact,footer{display:block}.contactBtns{margin-top:20px}}
+</style>
+</head>
+<body>
+<div class="top">🌍 Worldwide vehicle sourcing & shipping</div>
+<nav>
+<a class="logo" href="#">Ebuauto</a>
+<div class="navlinks"><a href="#">Home</a><a href="#inventory">Cars</a><a href="#services">Services</a><a href="#shipping">Shipping</a><a href="#contact">Contact</a></div>
+<a class="btn" href="#contact">Get a Quote</a>
+</nav>
+<header class="hero"><div class="heroText"><small>YOUR GLOBAL AUTO PARTNER</small><h1>Find your car.<br><span>We handle the rest.</span></h1><p>Source quality vehicles, arrange inspection and ship your car worldwide with Ebuauto.</p><a class="btn" href="#inventory">Explore Cars</a><a class="outline" href="#contact">Request a Quote</a></div></header>
+<section class="stats"><div><b>Worldwide</b><span>Shipping</span></div><div><b>Verified</b><span>Vehicle sourcing</span></div><div><b>End-to-end</b><span>Export support</span></div><div><b>Clear</b><span>Quote process</span></div></section>
+<section id="inventory"><div class="heading"><small>OUR INVENTORY</small><h2>Featured vehicles</h2><p>Browse a selection of vehicles available for international export.</p></div>
+<div class="filters"><input id="search" placeholder="Search make or model"><select id="type"><option value="">All types</option><option>Electric</option><option>Hybrid</option><option>SUV</option></option></select></div>
+<div id="cars" class="grid"></div></section>
+<section id="services" class="light"><div class="heading"><small>OUR SERVICES</small><h2>Everything from sourcing to shipping</h2></div><div class="serviceGrid">
+<article><div>🚘</div><h3>Vehicle Sourcing</h3><p>Find the make and model you want from our network of vehicle suppliers.</p></article>
+<article><div>🔍</div><h3>Inspection</h3><p>Get vehicle photos, videos and inspection support before purchase.</p></article>
+<article><div>📑</div><h3>Export Documents</h3><p>Support with invoices, export paperwork and shipping documents.</p></article>
+<article><div>🚢</div><h3>Worldwide Shipping</h3><p>Arrange international transport to your destination port.</p></article>
+</div></section>
+<section id="shipping"><div class="split"><div><small>WORLDWIDE SHIPPING</small><h2>Wherever you are, we can help.</h2><p>Tell us your destination and preferred vehicle. Ebuauto can prepare a shipping and vehicle quotation for your request.</p><ul><li>Africa</li><li>Middle East</li><li>South America</li><li>Central Asia</li><li>Other destinations on request</li></ul></div>
+<div class="quoteBox"><h3>Get a shipping estimate</h3><form onsubmit="event.preventDefault();alert('Quote request ready to connect to your email or WhatsApp.');"><input required placeholder="Your name"><input required placeholder="Car / model"><select required><option value="">Destination</option><option>Cameroon</option><option>Nigeria</option><option>Ghana</option><option>Kenya</option><option>Tanzania</option><option>UAE</option><option>Saudi Arabia</option><option>Other</option></select><input placeholder="Destination port (optional)"><button class="btn">Request Estimate</button></form></div></div></section>
+<section id="contact" class="contact"><div><small>CONTACT EBUAUTO</small><h2>Ready to find your next car?</h2><p>Send an inquiry and we'll get back to you with the next steps.</p></div><div class="contactBtns"><a class="btn" href="mailto:hello@ebuauto.example">Email Ebuauto</a></div></section>
+<footer><div class="logo">Ebuauto</div><p>Worldwide vehicle sourcing & export</p><p>© 2026 Ebuauto</p></footer>
+<script>
+const cars=[['BYD','Seal','2026','Electric','$24,900','https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1000&q=80'],['Zeekr','7X','2026','Electric','$31,900','https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=1000&q=80'],['BMW','i3','2024','Electric','$27,500','https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=1000&q=80'],['Tesla','Model Y','2025','Electric','$34,800','https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1000&q=80'],['Mercedes-Benz','GLC','2025','Hybrid','$48,500','https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1000&q=80'],['Toyota','RAV4','2025','SUV','$29,900','https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80']];
+function render(){const q=document.getElementById('search').value.toLowerCase(),t=document.getElementById('type').value;document.getElementById('cars').innerHTML=cars.filter(c=>(!q||(c[0]+' '+c[1]).toLowerCase().includes(q))&&(!t||c[3]===t)).map(c=>`<article class="card"><img src="${c[5]}" alt="${c[0]} ${c[1]}"><div class="cardBody"><h3>${c[0]} ${c[1]}</h3><div class="meta">${c[2]} • ${c[3]} • Worldwide export</div><div class="price">${c[4]}</div><a class="btn" href="#contact">View details</a></div></article>`).join('')}
+document.getElementById('search').oninput=render;document.getElementById('type').onchange=render;render();
+</script>
+</body></html>

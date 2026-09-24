@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Pancho Fundz 💌</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;display:flex;justify-content:center;color:#202124}
+.phone{width:min(100%,430px);min-height:100vh;background:#fff;position:relative;overflow:hidden;box-shadow:0 0 35px #ddd}
+.top{height:72px;background:#fff;border-bottom:1px solid #eee;display:flex;align-items:center;padding:0 18px;gap:12px;position:sticky;top:0;z-index:3}
+.avatar{width:43px;height:43px;border-radius:50%;background:linear-gradient(135deg,#ff7fa3,#ffb7c9);display:flex;align-items:center;justify-content:center;font-size:22px}
+.top strong{display:block;font-size:16px}.online{font-size:12px;color:#8b8b8b}
+.chat{padding:22px 15px 115px;min-height:calc(100vh - 72px);background:linear-gradient(#fff,#fff8fb)}
+.msg{max-width:82%;padding:12px 15px;border-radius:19px;margin:10px 0;line-height:1.42;font-size:16px;animation:pop .35s ease}
+.left{background:#f0f1f5;border-bottom-left-radius:5px}
+.right{background:#ffd7e2;margin-left:auto;border-bottom-right-radius:5px}
+.time{font-size:10px;color:#999;margin:3px 5px}
+.choiceBox{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.choice{border:1px solid #ef9db5;background:#fff;color:#b52e58;border-radius:18px;padding:10px 14px;font-size:14px;cursor:pointer}
+.choice:hover{background:#fff0f4}
+.typing{display:inline-flex;gap:4px;padding:11px 15px;background:#f0f1f5;border-radius:18px}
+.typing i{width:6px;height:6px;background:#999;border-radius:50%;animation:b .9s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes b{50%{transform:translateY(-3px);opacity:.5}}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.footer{position:fixed;bottom:0;width:min(100%,430px);background:rgba(255,255,255,.96);border-top:1px solid #eee;padding:10px 15px;text-align:center;font-size:12px;color:#999}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="top">
+    <div class="avatar">💗</div>
+    <div><strong>Pancho Fundz</strong><span class="online">special conversation 💌</span></div>
+  </div>
+
+  <div id="chat" class="chat"></div>
+  <div class="footer">Please answer each message before continuing 💗</div>
+</div>
+
+<script>
+const chat=document.getElementById("chat");
+let step=0;
+
+const flows=[
+  {
+    text:"Hey Pancho Fundz 🥹❤️",
+    choices:[
+      ["Heyyy ❤️","Awww, hey you 😂❤️ I'm glad you're here."],
+      ["I'm listening 👀","Good... because I made this especially for you. 🥹💕"]
+    ]
+  },
+  {
+    text:"How are you? Be honest with me. 🥺",
+    choices:[
+      ["I'm good ❤️","I'm glad you're good. Thank you for telling me. ❤️"],
+      ["We good 😌","I'm really glad we're good. Thank you for being here with me. 🥹❤️"],
+      ["Not really 😭","Aww 🥺 thank you for being honest with me. I hope things get better."]
+    ]
+  },
+  {
+    text:"I also want to say I'm sorry for not updating you about your day the way I should have. 🥺❤️",
+    choices:[
+      ["You're forgiven ❤️","Thank you for forgiving me. 🥹❤️ I genuinely appreciate your heart and your understanding."],
+      ["Not yet 😒","😂 Fair enough. I'll accept that I still have some work to do. But thank you for hearing me out. ❤️"],
+      ["We good ❤️","That honestly makes me happy. 🥹❤️ Thank you for choosing peace between us and for giving me another chance."]
+    ]
+  },
+  {
+    text:"Can we keep choosing each other, talking things through, and growing together? 💗",
+    choices:[
+      ["Yes ❤️","That's all I want too. Thank you for choosing communication, patience and us. 🥹💕"],
+      ["Of course 🥹","Awww. Thank you. Let's keep growing together, one day at a time. ❤️"]
+    ]
+  },
+  {
+    text:"Okay... one serious question now. 👀💍<br><br>Will we still get married someday?",
+    choices:[
+      ["Of course 💍❤️","😂❤️ Okayyy, I heard you! Whatever the future holds, let's keep building something beautiful together."],
+      ["Yes, my love 🥹","🥹💍 That answer just made me smile. Thank you for seeing a future with me."],
+      ["Let's see 😂","😂 Fair enough. No pressure. We'll let our actions, love and time speak too. ❤️"]
+    ]
+  },
+  {
+    text:"And lastly... I love you. ❤️",
+    choices:[
+      ["I love you too 🥹❤️","🥹❤️ Thank you. I hope you always feel how deeply I care about you."],
+      ["I know 😂❤️","😂 You better know! But thank you for letting me say it anyway. ❤️"],
+      ["Love you more ❤️","😭❤️ Then I guess we're both in trouble because I'm not backing down either."]
+    ]
+  }
+];
+
+function addMessage(text,side="left"){
+  const d=document.createElement("div");
+  d.className="msg "+side;
+  d.innerHTML=text;
+  chat.appendChild(d);
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function addTime(){
+  const d=document.createElement("div");
+  d.className="time";
+  d.textContent="now";
+  chat.appendChild(d);
+}
+
+function showTyping(){
+  const d=document.createElement("div");
+  d.className="typing";
+  d.id="typing";
+  d.innerHTML="<i></i><i></i><i></i>";
+  chat.appendChild(d);
+  window.scrollTo(0,document.body.scrollHeight);
+}
+function removeTyping(){document.getElementById("typing")?.remove()}
+
+function renderStep(){
+  if(step>=flows.length){
+    showTyping();
+    setTimeout(()=>{
+      removeTyping();
+      addMessage("Thank you for answering everything, Pancho Fundz. 🥹💗","left");
+      addMessage("Whatever happens, I hope we keep choosing honesty, forgiveness, patience and love. ❤️","left");
+      addMessage("Now... come here 😂💕","left");
+    },700);
+    return;
+  }
+
+  showTyping();
+  setTimeout(()=>{
+    removeTyping();
+    const f=flows[step];
+    addMessage(f.text,"left");
+    addTime();
+
+    const box=document.createElement("div");
+    box.className="choiceBox";
+    f.choices.forEach(([label,response])=>{
+      const b=document.createElement("button");
+      b.className="choice";
+      b.textContent=label;
+      b.onclick=()=>{
+        box.remove();
+        addMessage(label,"right");
+        addTime();
+        showTyping();
+        setTimeout(()=>{
+          removeTyping();
+          addMessage(response,"left");
+          addTime();
+          step++;
+          setTimeout(renderStep,500);
+        },700);
+      };
+      box.appendChild(b);
+    });
+    chat.appendChild(box);
+    window.scrollTo(0,document.body.scrollHeight);
+  },700);
+}
+
+renderStep();
+</script>
+</body>
+</html>
